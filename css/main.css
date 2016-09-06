@@ -1,0 +1,28 @@
+@CHARSET "ISO-8859-1";
+
+#login{
+	
+    font-size: 30px;
+    color: black;
+    background-color: peru;
+    padding: 10px;
+    border-radius: 15px;
+}
+#register{
+	
+    font-size: 30px;
+    color: black;
+    background-color: peru;
+    padding: 10px;
+    border-radius: 15px;
+	
+}
+#logout{
+	
+    font-size: 30px;
+    color: black;
+    background-color: peru;
+    padding: 10px;
+    border-radius: 15px;
+	
+}
