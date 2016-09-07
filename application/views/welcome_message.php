@@ -7,6 +7,10 @@
 <meta name="keywords" content="city night layout, free template, CSS, HTML" />
 <meta name="description" content="City Night layout is a free website template provided by templatemo.com" />
 <link href="<?php echo base_url()?>css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<script src="<?php echo base_url()?>js/jquery.js"></script>
+<script src="<?php echo base_url()?>js/jquery.validate.min.js"></script>
+<script src="<?php echo base_url()?>js/loginform-validation.js"></script>
+<script src="<?php echo base_url()?>js/form-validation.js"></script>
 </head>
 
 <body>
@@ -14,46 +18,79 @@
 <div id="templatemo_wrapper2">
 	<div id="templatemo_container">
     
+
+        <?php if(isset($_REQUEST['user']))
+        {?>
+        <div id="templatemo_container">
         <div id="templatemo_menu">
+        	<ul>
+			<li><a href="index.html" class="current">Home</a></li>
+			<li><a href="http://www.templatemo.com/page/1" target="_parent">Services</a></li>
+            <li><a href="http://www.templatemo.com/page/2" target="_parent">Projects</a></li>
+            <li><a href="#">About Us</a></li>                      
+            <li><a href="#" class="lastmenu">Contact Us</a></li> 
+            <li><a href="#">My Profile</a></li>  
+                       
+        </ul>  
+          </div>
+          </div>
+        	
+       <?php }else{?>
+               <div id="templatemo_menu">
      	<ul>
 			<li><a href="index.html" class="current">Home</a></li>
 			<li><a href="http://www.templatemo.com/page/1" target="_parent">Services</a></li>
-            <li><a href="http://www.templatemo.com/page/2" target="_parent">Solutions</a></li>
-            <li><a href="#">Partners</a></li>  
-            <li><a href="#">News</a></li>                      
-            <li><a href="#" class="lastmenu">Contact Us</a></li>            
+            <li><a href="http://www.templatemo.com/page/2" target="_parent">Projects</a></li>
+            <li><a href="#">About Us</a></li>                      
+            <li><a href="#" class="lastmenu">Contact Us</a></li>  
+            <li><a href="#">Register</a></li>            
         </ul>  
+        
     </div>
-    
+    <?php }?>
     <div id="templatemo_header_banner">
     	<div id="templatemo_header">
         	<div id="templatemo_sitetitle">
-            	City<span> Night</span>            </div>
-      <div id="templatemo_tagline">Building online businesses for success</div>
+            	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
+      <div id="templatemo_tagline"><i>Building and Delivering project knowledge</i></div>
         </div>
         <div id="templatemo_banner">
+        	
         	<div id="templatemo_bannertext">
-            	Let's build<br /><span>SUCCESSFUL BUSINESS</span><br />
+        		<div id='back'>
+            	Let's build<br /><span>SUCCESSFUL PROJECTS</span><br/>
             	together
+            	</div>
             </div>
         </div>
     </div>
-    
-    <div id="templatemo_content">
+     <div id="templatemo_content">
+   <?php if(isset($_REQUEST['user'])){
+
+   }else{?> 
+   
     
    		<!-- left column -->
+   		
     	<div id="templatemo_leftcolumn">
+    	
         	<div class="login_form">
              	<h1>Client Login</h1>
-        
-          <form method="get" action="#">
-                    <div class="form_row"><label>Email</label><input name="email_address" type="text" class="inputfield" id="email_addremss" maxlength="60"/>
+        <?php if(isset($_REQUEST['sts'])){
+        	
+        	
+        	echo "<font color='red'><label id='msg'>Invalid username or password !</label></font>";//massage for invalid  user
+        	
+        }?>
+          <form method="get" action="<?php echo base_url('index.php/')?>welcome/userLogin" name='myform'>
+                    <div class="form_row"><label>User Name</label><input name="uid" type="text" class="noSpecialChars" id="uid" maxlength="60"/>
               </div>
-                    <div class="form_row"><label>Password</label><input name="password" type="password" class="inputfield" id="password" maxlength="60"/>
+                    <div class="form_row"><label>Password</label><input name="upass" type="password" class="inputfield" id="password" maxlength="60"/>
               </div>
-                    <input class="button" type="submit" name="Submit" value="Login" />
+                    <a href="<?php echo base_url('index.php/')?>welcome/register"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
                 </form>
 			</div>
+			
             
             <div class="spacetobottom"></div>
             
@@ -74,7 +111,7 @@
             
         </div>
         <!-- End of left column -->
-        
+
         <!-- Right column -->
         <div id="templatemo_rightcolumn">
         	<div class="onecolumn">
@@ -149,18 +186,19 @@
 
         </div>
         <!-- End of right column -->
-        
+     
 	</div>
     <!-- End of content -->
+      <?php }?> 
     
     <div id="templatemo_footer">
-        <a href="#">Home</a> | <a href="#">Services</a> | <a href="#">Solutions</a> | <a href="#">Partners</a> | <a href="#">News</a> | <a href="#">Contact Us</a><br />
-        Copyright © 2048 <a href="#"><strong>Your Company Name</strong></a> | 
-        <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">CSS Templates</a>	</div>
+        <a href="#">Home</a> | <a href="#">Services</a> | <a href="#">Projects</a> | <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Register</a><br />
+        Copyright © 2016 <a href="#"><strong>Dream Projects And Solutions</strong></a> | 
+        <a href="http://www.iwebsitetemplate.com" target="_parent">Website</a> by <a href="http://www.templatemo.com" target="_parent">Dream Projects And Solutions</a>	</div>
     </div>
     <!-- Container close -->
     
 </div> <!-- Wrapper 2 close -->
 </div> <!-- Wrapper 1 close -->
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</body>
 </html>

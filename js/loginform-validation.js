@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 
 // Wait for the DOM to be ready
-$(function() {
+$(document).ready(function() {
   // Initialize form validation on the registration form.
   // It has the name attribute "registration"
   $("form[name='myform']").validate({
@@ -22,7 +22,7 @@ $(function() {
       // The key name on the left side is the name attribute
       // of an input field. Validation rules are defined
       // on the right side
-      uid: {
+      uid:{
           required: true,
           minlength:5
           

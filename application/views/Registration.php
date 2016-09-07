@@ -1,36 +1,83 @@
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url()?>css/style1.css">
 
-<center>
-	<?php
-		echo "<h1>welcome to Registration page</h1>";
-	?>
+  
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>City Night Layout - free website template</title>
+<meta name="keywords" content="city night layout, free template, CSS, HTML" />
+<meta name="description" content="City Night layout is a free website template provided by templatemo.com" />
+<link href="<?php echo base_url()?>css/templatemo_style.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url()?>js/jquery.js"></script>
 <script src="<?php echo base_url()?>js/jquery.validate.min.js"></script>
 <script src="<?php echo base_url()?>js/form-validation.js"></script>
+</head>
 
+<body>
+<div id="templatemo_wrapper1">
+<div id="templatemo_wrapper2">
+	<div id="templatemo_container">
+   
+               <div id="templatemo_menu">
+     	<ul>
+			<li><a href="index.html" class="current">Home</a></li>
+			<li><a href="http://www.templatemo.com/page/1" target="_parent">Services</a></li>
+            <li><a href="http://www.templatemo.com/page/2" target="_parent">Projects</a></li>
+            <li><a href="#">About Us</a></li>                      
+            <li><a href="#" class="lastmenu">Contact Us</a></li>  
+            <li><a href="#">Register</a></li>            
+        </ul>  
+        
+    </div>
 
-<div class="outer">
-	<div class="content">
-		<form method = "get" action ="<?php echo base_url('index.php/')?>welcome/insertModel" name="register">
-							<input type ="text" id = "uname" placeholder = "user name" name = "uname" class="required noSpecialChars"><br>
+    <div id="templatemo_header_banner">
+    	<div id="templatemo_header">
+        	<div id="templatemo_sitetitle">
+            	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
+      <div id="templatemo_tagline"><i>Building and Delivering project knowledge</i></div>
+        </div>
+        <div id="templatemo_banner">
+        	
+        	<div id="templatemo_bannertext">
+        		<div id='back'>
+            	Let's build<br /><span>SUCCESSFUL PROJECTS</span><br/>
+            	together
+            	</div>
+            </div>
+        </div>
+    </div>
+    
+    
+      <div id="templatemo_content">
+<div class='regfrom'>
+		
+		<form style='text-align: left;' method = "get" action ="<?php echo base_url('index.php/')?>welcome/insertModel" name="register">
+		
+		<div class='regMsg'>
+		<?php
+		echo "<h1>Welcome to Registration page</h1>";
+		?>
+		</div>
+							<div class='reg_from_row'><input type ="text" id = "uname" placeholder = "user name" name = "uname" class="required noSpecialChars"></div>
 							
-							<?php if(isset($_REQUEST['user']))
+							<?php if(isset($_REQUEST['userExist']))
 		{
-		  echo "<br><font color='red'><br>User Name is Already exist !!! <font>"; //massage for user exists
+		  echo "<font color='red'>User Name is Already exist !!! </font>"; //massage for user exists
 		}?>
-		                	<br><input type ="text" id = "FirstName" placeholder = "First Name" name = "fname" class="required noSpecialChars1"><br><br>
-		                	<input type ="text" id = "LastName" placeholder = "Last Name" name = "lname" class="required noSpecialChars2"><br><br>
+		                	<div class='reg_from_row'><input type ="text" id = "FirstName" placeholder = "First Name" name = "fname" class="required noSpecialChars1"></div>
+		                	<div class='reg_from_row'><input type ="text" id = "LastName" placeholder = "Last Name" name = "lname" class="required noSpecialChars2"></div>
 		
-		              		<input type = "password" id = "password" name = "pass" placeholder = "Create password" ><br><br>
+		              		<div class='reg_from_row'><input type = "password" id = "password" name = "pass" placeholder = "Create password" ></div>
 		
-		              		<input type = "password" id = "cpassword" name = "cpass" placeholder = "confirm password" class="required passwordMatch"><br><br>
-							<br>
+		              		<div class='reg_from_row'><input type = "password" id = "cpassword" name = "cpass" placeholder = "confirm password" class="required passwordMatch"></div>
+							
 		              		<?php
 		
 											if(isset($_REQUEST['sts']))
 											{
-											  echo "<font color='red'>Please enter valid Captcha !!!<font><br>";//massage for invalid  user
+											  echo "<font color='red'>Please enter valid Captcha !!!</font>";//massage for invalid  user
 											}
 											if(!isset($_POST['nm']) || !isset($_POST['cap']) )
 											{
@@ -63,39 +110,54 @@
 											
 											$_SESSION['val_cap']=$val;//catccha seted into session
 											echo "<input type ='hidden' id = 'val_cap'  name = 'val_cap' value='$val'>";
-											echo "<img src=".base_url()."captcha.jpg><input type='button' value='Refresh' class='button' onclick='location.reload();'/>
-													<br><input type='text' name='cap' placeholder='Type above Text'class='required noSpecialChars3'/>";
+											echo "<div class='captch'>
+															<div class='captchaImg'>
+																<img src=".base_url()."captcha.jpg id='cImg'>
+																<input type='button' value='Refresh' id='refbutton' onclick='location.reload();'/>
+															
+												
+													</div>
+														
+													</div>
+															<div class='reg_from_row1'><input type='text' name='cap' placeholder='Type above Text'class='required noSpecialChars3'/>
+													</div>";
 											}
 											
 											//captrcha code ends here
 						?>
 		               		 
-		   						 <input type = "submit" id = "dologin" class='button1' value = "Register">
-		   						
-	</div>
-			
-			 
-		   						
- </div>          
- 		
+		   						 <input type = "submit" id='regButton' value = "Register">
+		   						        
+ 		 </div>
   								<?php 
   
-  								 if(isset($_REQUEST['user']))
+  								 if(isset($_REQUEST['userExist']))
   								{
-  									echo "<br><font color='red'><br> Registration failed !!! <font>"; //massage for user exists
+  									echo "<font color='red'><center>Registration failed !!! </center></font>"; //massage for user exists
   										}
   										if(isset($_REQUEST['sts']))
   										{
-  											echo "<br><font color='red'><br> Registration failed !!! <font>"; //massage for user exists
+  											echo "<font color='red'><center>Registration failed !!!</center> </font>"; //massage for user exists
   										}
 		   						 if(isset($_REQUEST['registerSuccess']))
 		   						 {
-		   						 	echo "<font color='green'>Registration is successfully done !!!</font><br>";//massage for valid  user
-		   						 	echo "&nbsp;&nbsp;&nbsp;<a href='".base_url('index.php/')."welcome/login'>click here for Login</a><br/>";
+		   						 	echo "<center><font color='green'>Registration is successfully done !!!</font><br>";//massage for valid  user
+		   						 	echo "&nbsp;&nbsp;&nbsp;<a href='".base_url('index.php/')."welcome/login'>click here for Login</a></center>";
 		   						 }
 		   						 
+
 		   						 ?>
-</form>
-	   
-	   
-</center>
+		   						
+		</form>
+		</div>
+<div id="templatemo_footer">
+        <a href="#">Home</a> | <a href="#">Services</a> | <a href="#">Projects</a> | <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Register</a><br />
+        Copyright © 2016 <a href="#"><strong>Dream Projects And Solutions</strong></a> | 
+        <a href="http://www.iwebsitetemplate.com" target="_parent">Website</a> by <a href="http://www.templatemo.com" target="_parent">Dream Projects And Solutions</a>	</div>
+    </div>
+    <!-- Container close -->
+    
+</div> <!-- Wrapper 2 close -->
+</div> <!-- Wrapper 1 close -->
+</body>
+</html>

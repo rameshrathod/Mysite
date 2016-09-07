@@ -24,11 +24,11 @@ Class MyModel extends CI_Model {
 		$data = $query->result();
 		if(empty($data))
 		{
-			header("location:".base_url('index.php/')."welcome/login?sts=Invalid username or password !");
+			header("location:".base_url('index.php/')."welcome?sts=Invalid username or password !");
 		}	
 		
 		else{
-			return $data;
+			header("location:".base_url('index.php/')."welcome?user=1!");
 		}
 		
 	

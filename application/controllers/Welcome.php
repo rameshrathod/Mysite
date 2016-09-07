@@ -44,7 +44,7 @@ class Welcome extends CI_Controller {
 			$pass=MD5($_REQUEST['upass']);
 		$this->load->model('MyModel');
 		$r=$this->MyModel->Select("user_details",$uname,$pass);
-			$this->load->view('Welcome');
+			$this->load->view('welcome_message');
     		
     	
  	 }
@@ -74,17 +74,16 @@ class Welcome extends CI_Controller {
  	 					'lastname'=>$_GET['lname']
  	 			);
  	 			$this->MyModel->Insert($data);
- 	 			echo "Registration successful<br>";
- 	 			header("location:".base_url('index.php/')."welcome/registration?registerSuccess");
+ 	 			header("location:".base_url('index.php/')."welcome/register?registerSuccess");
  	 
  	 				
  	 		}
  	 		else{
- 	 			header("location:".base_url('index.php/')."welcome/registration?user=Username Already Exist !");
+ 	 			header("location:".base_url('index.php/')."welcome/register?userExist=Username Already Exist !");
  	 		}
  	 	}
  	 	else{
- 	 		header("location:".base_url('index.php/')."welcome/registration?sts=Invalid Capcha");
+ 	 		header("location:".base_url('index.php/')."welcome/register?sts=Invalid Capcha");
  	 	}
  	 
  	 

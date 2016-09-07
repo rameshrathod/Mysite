@@ -8,7 +8,7 @@ body {
 	line-height: 1.5em;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	color: #686f76;
+	color: white;
 	background: #121b24;
 }
 
@@ -20,7 +20,7 @@ h1 {
 	padding: 0px 0px 15px 0px;
 	font-size: 1.4em;
 	font-weight: bold;
-	color: #aabdd0;
+	color: white;
 }
 
 h4 {
@@ -61,14 +61,16 @@ form{
 
 label {
 	margin-right: 10px;
+	padding-left:3px;
 }
 
 input{
 	width: 150px;
 	height: 15px;
-	color: #aabdd0;
+	color: black;
 	border: 1px solid #686f76;
-	background: #070707;
+	background: beige;
+    padding-left: 5px;
 }
 
 .button{
@@ -93,11 +95,11 @@ input{
 
 
 #templatemo_wrapper1 {
-	background: url(images/maintopBG.gif) top repeat-x;
+	background: url(../images/maintopBG.gif) top repeat-x;
 }
 
 #templatemo_wrapper2 {
-	background: url(images/mainbuttomBG.gif) bottom repeat-x;
+	background: url(../images/mainbuttomBG.gif) bottom repeat-x;
 }
 
 #templatemo_container {
@@ -143,7 +145,7 @@ input{
 
 #templatemo_menu li a:hover, #templatemo_menu li .current{
 	color: #aabdd0;
-	background: url(images/menuhoverBG.gif) no-repeat;
+	background: url(../images/menuhoverBG.gif) no-repeat;
 }
 
 /* ----------------- end of menu----------------*/
@@ -162,14 +164,15 @@ input{
 	float: left;
 	width: 310px;
 	height: 268px;	
-	background: url(images/header.jpg) no-repeat;
+	background: url(../images/header.jpg) no-repeat;
 }
 
 #templatemo_sitetitle {
-	padding: 180px 0 10px 40px;
-	font-size: 3.0em;
-	font-weight: bold;
-	color:#ff6000;
+    padding: 180px 0 10px 40px;
+    font-size: 3.0em;
+    font-weight: bold;
+    color: #ff6000;
+    margin-left: -40px;
 }
 #templatemo_sitetitle span{
 	font-weight: normal;
@@ -185,7 +188,7 @@ input{
 	float: left;
 	width: 590px;
 	height: 268px;
-	background: url(images/banner.jpg) no-repeat;
+	background: url(../images/banner1.jpg) no-repeat;
 }
 
 #templatemo_bannertext{
@@ -213,7 +216,7 @@ input{
 	float: left;
 	width: 280px;
 	padding: 50px 20px 0 10px;
-	background: url(images/leftcolumnBG.gif) top center no-repeat;
+	background: url(../images/leftcolumnBG.gif) top center no-repeat;
 }
 
 .login_form{
@@ -253,7 +256,7 @@ input{
 	float: left;
 	width: 230px;
 	padding: 10px;
-	background: #0c1117 url(images/boxBG.gif) top right no-repeat;
+	background: #0c1117 url(../images/boxBG.gif) top right no-repeat;
 	border: 5px solid #0f1721;
 }
 .twocolumn_box img {
@@ -271,7 +274,7 @@ input{
 .twocolumn_box li {
 	list-style: none;
 	padding: 10px 0 10px 20px;
-	background: url(images/listicon.gif) center left no-repeat;
+	background: url(../images/listicon.gif) center left no-repeat;
 }
 
 #gallery {
@@ -291,6 +294,10 @@ input{
 .gallery_column p{
 	text-align: left;
 }
+#back{
+	
+	    background-color: rgba(160, 60, 74, 0.4);
+}
 
 /* end of content */
 
@@ -302,7 +309,7 @@ input{
 	width: 960px;
 	height: 60px;
 	text-align: center;
-	background: url(images/footerBG.gif) repeat-x;
+	background: url(../images/footerBG.gif) repeat-x;
 	text-align: center;
 }
 
@@ -311,3 +318,90 @@ input{
 }
 
 /* ----- End of Footer ----- */
+
+.regMsg{
+	
+    margin-top: 20px;
+    background-color: olivedrab;
+    font-size: 13px;
+    color: white;
+    /* margin-right: 520px; */
+    padding: 0px;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 326px;
+    border-top-right-radius: 45px;
+}
+.reg_from_row{
+	        padding: 5px;
+}
+.reg_from_row1{
+	margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 8px;
+    
+
+}
+ 
+.regfrom{
+	       
+	border: 1px solid;
+    width: 400px;
+    padding: 20px;
+    /* border-color: greenyellow; */
+    box-shadow: 0px 10px 80px white;
+    margin-top: 30px;
+    height: 340px;
+    border-top-right-radius: 280px;
+    margin-bottom: 25px;
+
+}
+.captchaImg{
+    padding: 0px 5px 5px 5px;
+    width: 210px;
+    border: 1px solid;
+    height: 60px;
+}
+.captch{
+	
+    border: 1px solid;
+    width: 225px;
+    padding: 5px;
+    border-color: black;
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: beige;
+    margin-bottom: 10px;
+}
+}
+.refButton{
+	
+	    margin-left: 140px;
+    margin-top: -48px;
+    height: 50px;
+}
+#refbutton{
+    width: 70px;
+    height: 25px;
+    background-color: maroon;
+    color: white;
+    box-shadow: 6px 5px 2px 0px gray;
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 15px;
+	
+}
+
+#cImg{
+	margin-top: 15px;
+}
+#regButton{
+width: 90px;
+    height: 25px;
+    background-color: #468870;
+    color: white;
+    box-shadow: 6px 5px 2px 0px gray;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 146px;
+}

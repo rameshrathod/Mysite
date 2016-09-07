@@ -1,65 +1,46 @@
-.outer{
-    background-color: darkkhaki;
-    width: 650px;
-    height: 400px;
-    padding-top: 20px;
-    border-radius: 50px;
-    box-shadow: 0px 0px 30px 10px rgba(0,0,0,0.5);
-}
-.content{
-    /*background-color: cadetblue;*/
-    width: 260px;
-    height: 360px;
-    border-radius: 30px;
-    margin-left: 30px;
-    float: left;
-        /* background-color: #564c4c; */
-    width: 260px;
-    height: 360px;
-    border-radius: 30px;
-    margin-left: 30px;
-    float: left;
-    box-shadow: 10px 10px 30px 5px brown;
-    background-color: #564c4c;
-
-}
-input{
-
-    padding: 5px;
-
-    margin-top: 10px;
-    /* float: none; */
-    position: fixed;
-    margin-left: -110px;
-    margin-bottom: 5px;
-    border-color: brown;
-    border-radius: 10px;
-    width: 230px;
-}
-label{
-
-    position: fixed;
-    margin-top: 15px;
-    margin-left: 150px;
-    color: red;
-    float: left;
-}
-
-img{
-    margin-left: -75px;
-    padding: 10px;
-    width: 145px;
-    border-radius: 20px;
-}
-.button{
-    padding: 5px;
-    margin-left: -5px;
+.regMsg{
+	
     margin-top: 20px;
-    width: 80px;
+    background-color: yellowgreen;
+    font-size: 13px;
+    color: white;
+    /* margin-right: 520px; */
+    padding: 0px;
+    width: 400px;
 }
-.button1{
+.reg_from_row{
+	        padding: 5px;
+}
+.reg_from_row1{
+	         margin-top: 20px;
+    margin-left: -5px;
+
+}
+ 
+.regfrom{
+	       
+	border: 1px solid;
+    width: 400px;
+    padding: 20px;
+    border-color: greenyellow;
+    box-shadow: 0px 10px 80px white;
+}
+.captchaImg{
+	    padding: 0px 5px 5px 5px;
+    width: 120px;
+    border: 1px solid;
+}
+.captch{
+	
+	    border: 1px solid;
+    width: 250px;
     padding: 5px;
-    margin-left: -50px;
-    margin-top: 50px;
-    width: 100px;
+    border-color: gold;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+.refButton{
+	
+	    margin-left: 150px;
+    margin-top: -35px;
 }
