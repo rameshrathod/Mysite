@@ -27,8 +27,8 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->driver('session');
-		$this->load->model('ServiceModel');
-		$arrayOfAnchors['arrayOfAnchors']=$this->ServiceModel->loadAnchors();
+		$this->load->model('MyModel');
+		$arrayOfAnchors['arrayOfAnchors']=$this->MyModel->loadAnchors();
 		$this->load->view('welcome_message',$arrayOfAnchors);
 		
 
@@ -37,7 +37,7 @@ class Welcome extends CI_Controller {
 	public function registration()
 	{
 		$this->load->model('ServiceModel');
-		$arrayOfAnchors['arrayOfAnchors']=$this->ServiceModel->loadAnchors();
+		$arrayOfAnchors['arrayOfAnchors']=$this->MyModel->loadAnchors();
 		$this->load->view('Registration',$arrayOfAnchors);
 	}
 	public function logout(){
@@ -61,8 +61,8 @@ class Welcome extends CI_Controller {
 		$this->session->set_userdata('mob',$mob);
 		//echo $pjs[0]->player_name;
 		//header("location:".base_url('index.php')."?user");
-		$this->load->model('ServiceModel');
-		$arrayOfAnchors['arrayOfAnchors']=$this->ServiceModel->loadAnchors();	
+		$this->load->model('MyModel');
+		$arrayOfAnchors['arrayOfAnchors']=$this->MyModel->loadAnchors();	
 		$this->load->view('Login',$arrayOfAnchors);
 			//$this->load->view('login',$data);
     		  	
