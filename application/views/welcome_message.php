@@ -84,14 +84,10 @@
 
         <!-- Right column -->
         <div id="templatemo_rightcolumn">
-        	<div class="onecolumn">
-                <h1>Welcome to our website</h1>
-                <p> <img src="<?php base_url()?>images/image(130x130).jpg" alt="image" />
-                City Night Template is provided by <a href="http://www.templatemo.com" target="_parent">templatemo.com</a> for free of charge. You may modify and apply this layout for your websites.</p>
-              <p>Credit goes to <a href="http://www.pdphoto.org" target="_blank">PDPhoto.org</a> for header image.</p>
-              <p>
-                Lorem ipsum nunc quis sem dolor sit amet, consectetuer adipiscing elit. Duis mollis aliquet ligula. Maecenas adipiscing elementum vitae velit sed dui malesuada dignissim.</p>
-		  </div>
+        	
+        	<?php include_once './application/views/welcomeNotePage.php';//welcome Note page is included here
+        	
+        		?>
 					            
             <div class="spacetobottom"></div>
             

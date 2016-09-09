@@ -7,7 +7,7 @@
 					<a href="http://www.templatemo.com/page/1" class="dropbtn" >Services</a>
 				  	<div class="dropdown-content" style="left:0;">
 				  <?php 
-				  foreach ($arrayOfAnchors[0] as $s_anchor){
+				  foreach ($welcomePageDisplayData[0] as $s_anchor){
 						$i=0;
 						for ($i;$i<count($s_anchor);$i++)
 						{
@@ -28,7 +28,7 @@
 				  	<div class="dropdown-content" style="left:0;">
 				  <?php 
 				  
-				  foreach ($arrayOfAnchors[1] as $prodanchor){
+				  foreach ($welcomePageDisplayData[1] as $prodanchor){
 					$i=0;
 					for ($i;$i<count($prodanchor);$i++)
 					{
@@ -56,7 +56,7 @@
 				  <div class="dropdown-content" style="left:0;">
 				  
 				     <?php 
-				  foreach ($arrayOfAnchors[2] as $myprofanchor){
+				  foreach ($welcomePageDisplayData[2] as $myprofanchor){
 					$i=0;
 					for ($i;$i<count($myprofanchor);$i++)
 					{

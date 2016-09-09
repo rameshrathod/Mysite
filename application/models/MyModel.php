@@ -45,21 +45,35 @@ Class MyModel extends CI_Model {
 	public  function fetchServiceAnchor($tableName){
 	
 		$query = $this->db->get($tableName);
-		$data = $query->result();
-		return $data;
+		$Anchors = $query->result();
+		return $Anchors;
 	
 	}
 	
-	public function loadAnchors(){
+	public  function welcomeContent($tableName){
+	
+		$query = $this->db->get($tableName);
+		$welcomeNoteData = $query->result();
+		return $welcomeNoteData;
+	
+	}
+	
+	public function LoginAllContent(){
 	
 		$s_anchors['s_anchors']=$this->MyModel->fetchServiceAnchor('serviceanchors');
 		$prod_anchors['prod_anchors']=$this->MyModel->fetchServiceAnchor('productanchors');
 		$myprof_anchors['myprof_anchors']=$this->MyModel->fetchServiceAnchor('myprofileanchors');
-		$arrayOfAnchors1=Array($s_anchors,$prod_anchors,$myprof_anchors);
+		
+		$welcomeNote['welcomeNote']=$this->MyModel->welcomeContent('welcomehomenote');
+		
+		
+		
+		$arrayOfAllWelcomePageData=Array($s_anchors,$prod_anchors,$myprof_anchors,$welcomeNote);
 	
-		return $arrayOfAnchors1;
+		return $arrayOfAllWelcomePageData;
 	}
 	
+
 
 
 	
