@@ -6,11 +6,12 @@
 <title>City Night Layout - free website template</title>
 <meta name="keywords" content="city night layout, free template, CSS, HTML" />
 <meta name="description" content="City Night layout is a free website template provided by templatemo.com" />
-<link href="<?php echo base_url()?>css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url()?>css/common.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url()?>css/loginstyle.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url()?>js/jquery.js"></script>
 <script src="<?php echo base_url()?>js/jquery.validate.min.js"></script>
 <script src="<?php echo base_url()?>js/loginform-validation.js"></script>
-<script src="<?php echo base_url()?>js/form-validation.js"></script>
+<script src="<?php echo base_url()?>js/form-validation1.js"></script>
 </head>
 
 <body>
@@ -18,37 +19,10 @@
 <div id="templatemo_wrapper2">
 	<div id="templatemo_container">
     
-
-        <?php if(isset($_REQUEST['user']))
-        {?>
-        <div id="templatemo_container">
-        <div id="templatemo_menu">
-        	<ul>
-			<li><a href="index.html" class="current">Home</a></li>
-			<li><a href="http://www.templatemo.com/page/1" target="_parent">Services</a></li>
-            <li><a href="http://www.templatemo.com/page/2" target="_parent">Projects</a></li>
-            <li><a href="#">About Us</a></li>                      
-            <li><a href="#" class="lastmenu">Contact Us</a></li> 
-            <li><a href="#">My Profile</a></li>  
-                       
-        </ul>  
-          </div>
-          </div>
-        	
-       <?php }else{?>
-               <div id="templatemo_menu">
-     	<ul>
-			<li><a href="index.html" class="current">Home</a></li>
-			<li><a href="http://www.templatemo.com/page/1" target="_parent">Services</a></li>
-            <li><a href="http://www.templatemo.com/page/2" target="_parent">Projects</a></li>
-            <li><a href="#">About Us</a></li>                      
-            <li><a href="#" class="lastmenu">Contact Us</a></li>  
-            <li><a href="#">Register</a></li>            
-        </ul>  
+					<?php include_once './application/views/menuAnchors.php';?>
         
-    </div>
-    <?php }?>
-    <div id="templatemo_header_banner">
+        
+            <div id="templatemo_header_banner">
     	<div id="templatemo_header">
         	<div id="templatemo_sitetitle">
             	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
@@ -65,49 +39,45 @@
         </div>
     </div>
      <div id="templatemo_content">
-   <?php if(isset($_REQUEST['user'])){
-
-   }else{?> 
-   
-    
+ 
    		<!-- left column -->
-   		
+   	
     	<div id="templatemo_leftcolumn">
-    	
-        	<div class="login_form">
-             	<h1>Client Login</h1>
-        <?php if(isset($_REQUEST['sts'])){
+    		<?php if(!$this->session->userdata('mob'))
+        		{?>
+        			<div class="login_form">
+             				<h1>Client Login</h1>
+        						<?php if(isset($_REQUEST['sts'])){
         	
         	
-        	echo "<font color='red'><label id='msg'>Invalid username or password !</label></font>";//massage for invalid  user
+        							echo "<font color='red'><label id='msg'>Invalid username or password !</label></font>";//massage for invalid  user
         	
-        }?>
-          <form method="get" action="<?php echo base_url('index.php/')?>welcome/userLogin" name='myform'>
-                    <div class="form_row"><label>User Name</label><input name="uid" type="text" class="noSpecialChars" id="uid" maxlength="60"/>
-              </div>
-                    <div class="form_row"><label>Password</label><input name="upass" type="password" class="inputfield" id="password" maxlength="60"/>
-              </div>
-                    <a href="<?php echo base_url('index.php/')?>welcome/register"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
-                </form>
-			</div>
+        						}?>
+          						<form method="get" action="<?php echo base_url('index.php/')?>welcome/userLogin" name='myform'>
+                    				<div class="form_row"><label>User Name</label><input name="uid" type="text" class="noSpecialChars" id="uid" maxlength="60"/>
+              						</div>
+                    				<div class="form_row"><label>Password</label><input name="upass" type="password" class="inputfield" id="password" maxlength="60"/></div>
+                    				<a href="<?php echo base_url('index.php/')?>welcome/register"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
+                				</form>
+					</div>
+			<?php }?>
 			
             
-            <div class="spacetobottom"></div>
-            
-            <h1>Latest News</h1>
-            <div class="newssection">    
-	            <h4>Mauris blandit vehicula neque</h4>        	
-                <p>Quisque in diam a justo condimentum molestie. Vivamus a velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <a href="#">more...</a></p>
-            </div>
-            
-			<div class="newssection">    
-	            <h4>Curabitur velit tellus</h4>        	
-                <p>Duis vitae velit sed dui males uada digni ssim. Donec mollis aliquet ligula. Maec enas adipiscing elementum ipsum. <a href="#">more...</a></p>
-            </div>
-            <div class="more_button"><a href="#">Read All</a></div>
-            
-            <a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" width="88" height="31" vspace="8" border="0" /></a>
-<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"  src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" vspace="8" border="0" /></a>
+		            <div class="spacetobottom"></div>
+		            	<h1>Latest News</h1>
+		            		<div class="newssection">    
+			            		<h4>Mauris blandit vehicula neque</h4>        	
+		                		<p>Quisque in diam a justo condimentum molestie. Vivamus a velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <a href="#">more...</a></p>
+		            		</div>
+		            
+							<div class="newssection">    
+			            		<h4>Curabitur velit tellus</h4>        	
+		                		<p>Duis vitae velit sed dui males uada digni ssim. Donec mollis aliquet ligula. Maec enas adipiscing elementum ipsum. <a href="#">more...</a></p>
+		            		</div>
+		            <div class="more_button"><a href="#">Read All</a></div>
+		            
+		            		<a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" width="88" height="31" vspace="8" border="0" /></a>
+							<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"  src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" vspace="8" border="0" /></a>
             
         </div>
         <!-- End of left column -->
@@ -182,21 +152,24 @@
                 
                 <div class="more_button"><a href="#">Read All</a></div>
             </div>
+            
             <div class="spacetobottom"></div>
 
         </div>
         <!-- End of right column -->
      
-	</div>
+	
     <!-- End of content -->
-      <?php }?> 
+      
+      </div>
     
-    <div id="templatemo_footer">
-        <a href="#">Home</a> | <a href="#">Services</a> | <a href="#">Projects</a> | <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Register</a><br />
-        Copyright © 2016 <a href="#"><strong>Dream Projects And Solutions</strong></a> | 
-        <a href="http://www.iwebsitetemplate.com" target="_parent">Website</a> by <a href="http://www.templatemo.com" target="_parent">Dream Projects And Solutions</a>	</div>
-    </div>
-    <!-- Container close -->
+		<div id="templatemo_footer">
+	        <a href="#">Home</a> | <a href="#">Services</a> | <a href="#">Projects</a> | <a href="#">About Us</a> | <a href="#">Contact Us</a> | <a href="#">Register</a><br />
+	        Copyright © 2016 <a href="#"><strong>Dream Projects And Solutions</strong></a> | 
+	        <a href="http://www.iwebsitetemplate.com" target="_parent">Website</a> by <a href="http://www.templatemo.com" target="_parent">Dream Projects And Solutions</a>
+        </div>
+   
+    </div><!-- Container close -->
     
 </div> <!-- Wrapper 2 close -->
 </div> <!-- Wrapper 1 close -->

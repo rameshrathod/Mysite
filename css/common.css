@@ -12,8 +12,8 @@ body {
 	background: #121b24;
 }
 
-a:link, a:visited { color: #aabdd0; text-decoration: none; font-weight: bold;} 
-a:active, a:hover { color: #aabdd0; text-decoration: underline}
+a:link, a:visited { color: #ffffff;; text-decoration: none; font-weight: bold;} 
+a:active, a:hover { color: #ffffff;; text-decoration: underline}
 
 h1 {
 	margin: 0px;
@@ -66,6 +66,14 @@ label {
 
 input{
 	width: 150px;
+	height: 15px;
+	color: black;
+	border: 1px solid #686f76;
+	background: beige;
+    padding-left: 5px;
+}
+#mobNoC{
+	width: 25px;
 	height: 15px;
 	color: black;
 	border: 1px solid #686f76;
@@ -135,7 +143,7 @@ input{
 	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
-	color: #aabdd0;
+	color: #ffffff;
 	border-left: 1px solid #34373b;
 }
 
@@ -351,7 +359,7 @@ input{
     /* border-color: greenyellow; */
     box-shadow: 0px 10px 80px white;
     margin-top: 30px;
-    height: 340px;
+   height: 370px;
     border-top-right-radius: 280px;
     margin-bottom: 25px;
 

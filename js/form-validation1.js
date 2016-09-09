@@ -29,6 +29,14 @@ $(document).ready(function(){
 
     }, 
     "Special Charactes are not allowed !");
+     
+    
+    $.validator.addMethod("noSpecialChars4", function(value, element) {
+
+        return this.optional(element) || /[0-9{10}]+$/i.test(value);
+
+    }, 
+    " Only Numbers are allowed !");
    
 
     jQuery.validator.addMethod("passwordMatch", function(value, element) {
@@ -60,9 +68,7 @@ $(function() {
  rules: {
       // The key name on the left side is the name attribute
       // of an input field. Validation rules are defined
-      // on the right side
-      lname: "required",
-      
+      // on the right side  
       uname: {
           required: true,
           minlength:5
@@ -70,6 +76,13 @@ $(function() {
           // Specify that email should be validated
           // by the built-in "email" rule
         },
+        mobNo: {
+            required: true,
+            minlength:10
+            
+            // Specify that email should be validated
+            // by the built-in "email" rule
+          },
         fname: {
             required: true,
             minlength:2
@@ -108,6 +121,10 @@ messages: {
           required: "Please provide a User Name",
         	  minlength: "Your User Name must be at least 5 characters long"
         },
+        mobNo: {
+            required: "Please provide a Mobile Number !",
+          	  minlength: "please provide 10 digit Mobile Number !"
+          },
         fname: {
             required: "Please provide a First Name",
             	minlength: "Your First Name must be at least 2 characters long"

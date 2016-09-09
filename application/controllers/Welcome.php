@@ -17,38 +17,56 @@ class Welcome extends CI_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
+	 * 
 	 */
+	Public function __construct() {
+		parent::__construct();
+		$this->load->library('session');
+		
+	}
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		//$this->load->driver('session');
+		$this->load->model('ServiceModel');
+		$arrayOfAnchors['arrayOfAnchors']=$this->ServiceModel->loadAnchors();
+		$this->load->view('welcome_message',$arrayOfAnchors);
 		
 
 	}
 	
 	public function registration()
 	{
-		
-		$this->load->driver('session');
-		$this->load->view('Registration');
-	}
-	public function login(){
-		$this->load->view('Login');
+		$this->load->model('ServiceModel');
+		$arrayOfAnchors['arrayOfAnchors']=$this->ServiceModel->loadAnchors();
+		$this->load->view('Registration',$arrayOfAnchors);
 	}
 	public function logout(){
-		$this->load->view('welcome_message');
+		$this->session->unset_userdata('mob');
+		//$this->load->view('welcome_message',$arrayOfAnchors);
+		header("location:".base_url('index.php')."");
 	}
 	
 	public function userLogin()
 	{
 			$uname=$_REQUEST['uid'];
 			$pass=MD5($_REQUEST['upass']);
-		$this->load->model('MyModel');
-		$r=$this->MyModel->Select("user_details",$uname,$pass);
-			$this->load->view('welcome_message');
-    		
-    	
- 	 }
- 	 
+		$this->load->model('MyModel');		
+		$datas['datas']=$this->MyModel->Select("user_details",$uname,$pass);
+			//var_dump($data);
+		foreach ($datas as $data) {
+			$mob= $data[0]->mobileNumber;
+			
+		}
+		echo $mob;
+		$this->session->set_userdata('mob',$mob);
+		//echo $pjs[0]->player_name;
+		//header("location:".base_url('index.php')."?user");
+		$this->load->model('ServiceModel');
+		$arrayOfAnchors['arrayOfAnchors']=$this->ServiceModel->loadAnchors();	
+		$this->load->view('Login',$arrayOfAnchors);
+			//$this->load->view('login',$data);
+    		  	
+ 	 } 
  	 public function insertModel(){
  	 
  	 	if(strtoupper($_GET['cap'])==strtoupper($_REQUEST['val_cap']))
@@ -70,6 +88,7 @@ class Welcome extends CI_Controller {
  	 			$data = array(
  	 					'username' => $_GET['uname'],
  	 					'password' =>MD5($_GET['pass']),
+ 	 					'mobileNumber' =>$_GET['mobNo'],
  	 					'firstname'=>$_GET['fname'],
  	 					'lastname'=>$_GET['lname']
  	 			);

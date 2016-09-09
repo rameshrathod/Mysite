@@ -9,30 +9,22 @@
 <title>City Night Layout - free website template</title>
 <meta name="keywords" content="city night layout, free template, CSS, HTML" />
 <meta name="description" content="City Night layout is a free website template provided by templatemo.com" />
-<link href="<?php echo base_url()?>css/templatemo_style.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url()?>css/common.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo base_url()?>css/loginstyle.css" rel="stylesheet" type="text/css" />
 <script src="<?php echo base_url()?>js/jquery.js"></script>
 <script src="<?php echo base_url()?>js/jquery.validate.min.js"></script>
-<script src="<?php echo base_url()?>js/form-validation.js"></script>
+<script src="<?php echo base_url()?>js/form-validation1.js"></script>
 </head>
 
 <body>
 <div id="templatemo_wrapper1">
 <div id="templatemo_wrapper2">
 	<div id="templatemo_container">
-   
-               <div id="templatemo_menu">
-     	<ul>
-			<li><a href="index.html" class="current">Home</a></li>
-			<li><a href="http://www.templatemo.com/page/1" target="_parent">Services</a></li>
-            <li><a href="http://www.templatemo.com/page/2" target="_parent">Projects</a></li>
-            <li><a href="#">About Us</a></li>                      
-            <li><a href="#" class="lastmenu">Contact Us</a></li>  
-            <li><a href="#">Register</a></li>            
-        </ul>  
+    
+					<?php include_once './application/views/menuAnchors.php';?>
         
-    </div>
-
-    <div id="templatemo_header_banner">
+        
+            <div id="templatemo_header_banner">
     	<div id="templatemo_header">
         	<div id="templatemo_sitetitle">
             	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
@@ -48,18 +40,16 @@
             </div>
         </div>
     </div>
-    
-    
       <div id="templatemo_content">
-<div class='regfrom'>
+			<div class='regfrom'>
 		
-		<form style='text-align: left;' method = "get" action ="<?php echo base_url('index.php/')?>welcome/insertModel" name="register">
+			<form style='text-align: left;' method = "get" action ="<?php echo base_url('index.php/')?>welcome/insertModel" name="register">
 		
-		<div class='regMsg'>
-		<?php
-		echo "<h1>Welcome to Registration page</h1>";
-		?>
-		</div>
+			<div class='regMsg'>
+			<?php
+			echo "<h1>Welcome to Registration page</h1>";
+			?>
+			</div>
 							<div class='reg_from_row'><input type ="text" id = "uname" placeholder = "user name" name = "uname" class="required noSpecialChars"></div>
 							
 							<?php if(isset($_REQUEST['userExist']))
@@ -68,6 +58,7 @@
 		}?>
 		                	<div class='reg_from_row'><input type ="text" id = "FirstName" placeholder = "First Name" name = "fname" class="required noSpecialChars1"></div>
 		                	<div class='reg_from_row'><input type ="text" id = "LastName" placeholder = "Last Name" name = "lname" class="required noSpecialChars2"></div>
+		                	<div class='reg_from_row'><label>+91</label><input type ="text" id = "mobNo" placeholder = "Mobile No." name = "mobNo" class="required noSpecialChars4" maxlength="10"></div>
 		
 		              		<div class='reg_from_row'><input type = "password" id = "password" name = "pass" placeholder = "Create password" ></div>
 		

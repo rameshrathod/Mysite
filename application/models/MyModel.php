@@ -6,6 +6,8 @@ Class MyModel extends CI_Model {
 	Public function __construct() {
 		parent::__construct();
 		$this->load->database();
+		///$this->load->driver('session');
+		$this->load->library('session');
 	}
 	
 	public function Insert($data){
@@ -21,14 +23,14 @@ Class MyModel extends CI_Model {
 		$this->db->where('username',$uname);
 		 $this->db->where('password',$pass);
 		$query = $this->db->get($tableName);
-		$data = $query->result();
+		$data= $query->result();
 		if(empty($data))
 		{
 			header("location:".base_url('index.php/')."welcome?sts=Invalid username or password !");
 		}	
 		
 		else{
-			header("location:".base_url('index.php/')."welcome?user=1!");
+			return $data;
 		}
 		
 	
@@ -39,6 +41,7 @@ Class MyModel extends CI_Model {
 		$data= $query->result();
 		return $data;
 	}
+	
 
 
 	
