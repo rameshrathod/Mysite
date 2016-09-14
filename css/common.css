@@ -61,7 +61,7 @@ form{
 
 label {
 	margin-right: 10px;
-	padding-left:3px;
+	padding-left:1px;
 }
 
 input{
@@ -184,7 +184,7 @@ input{
 }
 #templatemo_sitetitle span{
 	font-weight: normal;
-	color: #FFFFFF;
+	color: peru;
 }
 #templatemo_tagline{
 	padding: 0 0 0 43px;
@@ -208,7 +208,7 @@ input{
 #templatemo_bannertext span{
 	font-size: 24px;
 	font-weight: bold;
-	color: #ff6000;	
+	color:peru;	
 }
 /* end of header and banner */
 
@@ -251,9 +251,11 @@ input{
 
 .onecolumn img {
 	float: right;
-	clear: both;	
-	margin: 0 0 5px 10px;
-	border: 3px solid #0e121d;
+    clear: both;
+    margin: -25px 0 5px 10px;
+    border: 3px solid #0e121d;
+    width: 150px;
+    border: 1px solid white;
 }
 
 .twocolumn {
@@ -268,9 +270,10 @@ input{
 	border: 5px solid #0f1721;
 }
 .twocolumn_box img {
-	float: left;
-	margin: 2px 10px 0 0;
-	border: 3px solid #0e121d;
+	    float: left;
+    margin: 2px 10px 10px 0;
+    border: 3px solid #b77f0f;
+    width: 80px;
 }
 .twocolumn_box p {
 	text-align: left;

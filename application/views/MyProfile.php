@@ -35,7 +35,8 @@
 		}
 		else{
 		
-
+	if($this->session->userdata('user'))//$this->session->userdata('user')
+	{
 		echo $this->session->userdata['sessionStartTime']+60 ."final";
 		
 		echo time()."in";
@@ -68,6 +69,6 @@
 </div> <!-- Wrapper 1 close -->
 <?php }
 
-	?>
+	}?>
 
 </body>

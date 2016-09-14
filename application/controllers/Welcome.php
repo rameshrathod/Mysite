@@ -3,70 +3,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 * 
-	 */
 	Public function __construct() {
 		parent::__construct();
-		$this->load->library('session');
-		
+		$this->load->library('session');		
 	}
 	public function index()
 	{
 		//$this->load->driver('session');
 		$this->load->model('MyModel');
-		$arrayOfAnchors['arrayOfAnchors']=$this->MyModel->loadAnchors();
-		$this->load->view('welcome_message',$arrayOfAnchors);
-		
+		$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
 
+			$this->load->view('welcome_message',$welcomePageDisplayData);
+		
 	}
 	
-	public function registration()
+	public function registration()//for registration
 	{
-		$this->load->model('ServiceModel');
-		$arrayOfAnchors['arrayOfAnchors']=$this->MyModel->loadAnchors();
-		$this->load->view('Registration',$arrayOfAnchors);
+		$this->load->model('MyModel');
+		$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+
+			$this->load->view('Registration',$welcomePageDisplayData);	
 	}
-	public function logout(){
-		$this->session->unset_userdata('mob');
-		//$this->load->view('welcome_message',$arrayOfAnchors);
-		header("location:".base_url('index.php')."");
+	public function logout(){//for logout
+		$this->session->unset_userdata('user');
+		$this->session->sess_destroy();
+		header("location:".base_url('index.php')."");	
 	}
 	
-	public function userLogin()
+	public function userLogin()//for login
 	{
 			$uname=$_REQUEST['uid'];
 			$pass=MD5($_REQUEST['upass']);
 		$this->load->model('MyModel');		
 		$datas['datas']=$this->MyModel->Select("user_details",$uname,$pass);
-			//var_dump($data);
+		
 		foreach ($datas as $data) {
-			$mob= $data[0]->mobileNumber;
-			
+			$user= $data[0]->username;	
 		}
-		echo $mob;
-		$this->session->set_userdata('mob',$mob);
-		//echo $pjs[0]->player_name;
-		//header("location:".base_url('index.php')."?user");
+		
+		$this->session->set_userdata('user',$user);
 		$this->load->model('MyModel');
-		$arrayOfAnchors['arrayOfAnchors']=$this->MyModel->loadAnchors();	
-		$this->load->view('Login',$arrayOfAnchors);
-			//$this->load->view('login',$data);
-    		  	
+		$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+			
+	if($this->session->userdata("sessionStartTime")!=null)//checking for session
+		{
+			
+			if ($this->session->userdata("sessionStartTime") + 10< time()) {//session time
+			
+				header("location:".base_url('index.php/welcome/logout')."");//if session time out then redirect to logout
+			}
+			
+			else {
+				$this->load->view('welcome_message',$welcomePageDisplayData);
+			}
+		}
+		else{
+			$this->load->view('welcome_message',$welcomePageDisplayData);
+		}
+	
  	 } 
+ 	 
  	 public function insertModel(){
  	 
  	 	if(strtoupper($_GET['cap'])==strtoupper($_REQUEST['val_cap']))
@@ -92,6 +88,7 @@ class Welcome extends CI_Controller {
  	 					'firstname'=>$_GET['fname'],
  	 					'lastname'=>$_GET['lname']
  	 			);
+ 	 			
  	 			$this->MyModel->Insert($data);
  	 			header("location:".base_url('index.php/')."welcome/register?registerSuccess");
  	 
@@ -106,6 +103,26 @@ class Welcome extends CI_Controller {
  	 	}
  	 
  	 
+ 	 }
+ 	 
+ 	 public function aboutus(){
+ 	 	
+ 	 	$this->load->model('MyModel');
+ 	 	$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+
+ 	 		$this->load->view('AboutUs',$welcomePageDisplayData);
+ 	 	
+
+ 	 }
+ 	 
+ 	 public function contactus(){
+ 	 
+ 	 	$this->load->model('MyModel');
+ 	 	$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+ 	 		$this->load->view('ContactUs',$welcomePageDisplayData);
+ 	 	
+ 	 	
+ 	 		
  	 }
  	 	
 
