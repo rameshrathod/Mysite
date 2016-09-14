@@ -29,41 +29,11 @@
    	
     	<div id="templatemo_leftcolumn">
     		<?php if(!$this->session->userdata('user'))
-        		{?>
-        			<div class="login_form">
-             				<h1>Client Login</h1>
-        						<?php if(isset($_REQUEST['sts'])){
-        	
-        	
-        							echo "<font color='red'><label id='msg'>Invalid username or password !</label></font>";//massage for invalid  user
-        	
-        						}?>
-          						<form method="get" action="<?php echo base_url('index.php/welcome/userLogin')?>" name='myform'>
-                    				<div class="form_row"><label>User Name</label><input name="uid" type="text" class="noSpecialChars" id="uid" maxlength="60"/>
-              						</div>
-                    				<div class="form_row"><label>Password</label><input name="upass" type="password" class="inputfield" id="password" maxlength="60"/></div>
-                    				<a href="<?php echo base_url('index.php/welcome/register')?>"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
-                				</form>
-					</div>
-			<?php }?>
-			
-            
-		            <div class="spacetobottom"></div>
-		            	<h1>Latest News</h1>
-		            		<div class="newssection">    
-			            		<h4>Mauris blandit vehicula neque</h4>        	
-		                		<p>Quisque in diam a justo condimentum molestie. Vivamus a velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <a href="#">more...</a></p>
-		            		</div>
-		            
-							<div class="newssection">    
-			            		<h4>Curabitur velit tellus</h4>        	
-		                		<p>Duis vitae velit sed dui males uada digni ssim. Donec mollis aliquet ligula. Maec enas adipiscing elementum ipsum. <a href="#">more...</a></p>
-		            		</div>
-		            <div class="more_button"><a href="#">Read All</a></div>
-		            
-		            		<a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" width="88" height="31" vspace="8" border="0" /></a>
-							<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"  src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" vspace="8" border="0" /></a>
-            
+        		{
+        			include_once './application/views/LoginForm.php';
+        		}
+        		include_once './application/views/LatestNews.php';
+        		?>            
         </div>
         <!-- End of left column -->
 
@@ -78,23 +48,9 @@
             
             <div class="twocolumn">
 	            <?php include_once './application/views/WhoIAm.php';//Who i am Note page is included here
-        	
+        		include_once './application/views/WhatWeDo.php';
         		?>
-                <div class="spacetoright"></div>
-
-                <div class="twocolumn_box">
-                    <h1>What We Do</h1>
-                    <p>
-                        <img src="<?php base_url()?>images/image(70x70).jpg" alt="image" />
-                    Aliquam tristique lacus in sapien. Suspendisse potenti. Ut sed pede. Nullam vitae tellus. 
-                    </p>
-                    <ul>
-                    	<li>Praesent varius egestas velit</li>
-                        <li>Donec iaculis felis id neque</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-					</ul>
-                    <div class="more_button"><a href="#">View  All</a></div>
-                </div>
+                
 			</div>
             
            	<div class="spacetobottom"></div> 

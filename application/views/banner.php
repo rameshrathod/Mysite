@@ -1,6 +1,9 @@
 <div id="templatemo_header_banner">
     	<div id="templatemo_header">
         	<div id="templatemo_sitetitle">
+        	<div id='logo'>
+    		<img src="<?php base_url()?>images/header.jpg" alt="image" />
+    		</div>
             	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
       <div id="templatemo_tagline"><i>Building and Delivering IT project knowledge</i></div>
         </div>
@@ -8,8 +11,7 @@
         	
         	<div id="templatemo_bannertext">
         		<div id='back'>
-            	Let's build<br /><span>SUCCESSFUL PROJECTS</span><br/>
-            	together
+            	Let's build<br /><span>SUCCESSFUL PROJECTS</span><br/>together
             	</div>
             </div>
         </div>
