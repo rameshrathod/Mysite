@@ -1,17 +1,17 @@
         <div id="templatemo_menu">
         	<ul>
-			<li><a href="<?php echo base_url('index.php')?>?user" class="current">Home</a></li>
+			<li><a href="<?php echo base_url('index.php')?>" class="current">Home</a></li>
 			<li>
 			
 				<div class="dropdown" style="float:left;">
-					<a href="http://www.templatemo.com/page/1" class="dropbtn" >Services</a>
+					<a href="<?php echo base_url('index.php/services')?>" class="dropbtn" >Services</a>
 				  	<div class="dropdown-content" style="left:0;">
 				  <?php 
 				  foreach ($welcomePageDisplayData[0] as $s_anchor){
 						$i=0;
 						for ($i;$i<count($s_anchor);$i++)
 						{
-						echo '<a href="'.base_url('index.php').'">'.$s_anchor[$i]->anchor_name.'</a>';
+						echo '<a href="'.base_url('index.php/').'">'.$s_anchor[$i]->anchor_name.'</a>';
 						
 						}
 				  }
@@ -24,7 +24,7 @@
 			<li>
 			
 				<div class="dropdown" style="float:left;">
-					<a href="http://www.templatemo.com/page/1" class="dropbtn" >Products</a>
+					<a href="<?php echo base_url('index.php/products')?>" class="dropbtn" >Products</a>
 				  	<div class="dropdown-content" style="left:0;">
 				  <?php 
 				  
@@ -43,15 +43,15 @@
             	</div>
 			
 			</li>
-            <li><a href="#">About Us</a></li>                      
-            <li><a href="#" class="lastmenu">Contact Us</a></li> 
+            <li><a href="<?php echo base_url('index.php/welcome/aboutus')?>">About Us</a></li>                      
+            <li><a href="<?php echo base_url('index.php/welcome/contactus')?>" class="lastmenu">Contact Us</a></li> 
             
             
-             <?php if($this->session->userdata('mob'))
+             <?php if($this->session->userdata('user'))
         {?>
             <li>
             <div class="dropdown" style="float:left;">
-            <a href="#" class="dropbtn" >My Profile</a>
+            <a href="<?php base_url('index.php/welcome/userLogin')?>" class="dropbtn" >My Profile</a>
             		
 				  <div class="dropdown-content" style="left:0;">
 				  
@@ -71,7 +71,7 @@
             </li> 
             <?php }else{?>
             		
-            		<li><a href="<?php echo base_url('index.php/')?>welcome/register">Register</a></li> 
+            		<li><a href="<?php echo base_url('index.php/welcome/register')?>">Register</a></li> 
             		
             <?php }?>
           </ul> 

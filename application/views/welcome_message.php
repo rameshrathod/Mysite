@@ -13,37 +13,22 @@
 <script src="<?php echo base_url()?>js/loginform-validation.js"></script>
 <script src="<?php echo base_url()?>js/form-validation1.js"></script>
 </head>
-
 <body>
 <div id="templatemo_wrapper1">
 <div id="templatemo_wrapper2">
 	<div id="templatemo_container">
     
-					<?php include_once './application/views/menuAnchors.php';?>
-        
-        
-            <div id="templatemo_header_banner">
-    	<div id="templatemo_header">
-        	<div id="templatemo_sitetitle">
-            	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
-      <div id="templatemo_tagline"><i>Building and Delivering project knowledge</i></div>
-        </div>
-        <div id="templatemo_banner">
-        	
-        	<div id="templatemo_bannertext">
-        		<div id='back'>
-            	Let's build<br /><span>SUCCESSFUL PROJECTS</span><br/>
-            	together
-            	</div>
-            </div>
-        </div>
-    </div>
+					<?php include_once './application/views/menuAnchors.php';
+					
+						  include_once './application/views/banner.php';
+					
+					?>
      <div id="templatemo_content">
  
    		<!-- left column -->
    	
     	<div id="templatemo_leftcolumn">
-    		<?php if(!$this->session->userdata('mob'))
+    		<?php if(!$this->session->userdata('user'))
         		{?>
         			<div class="login_form">
              				<h1>Client Login</h1>
@@ -53,11 +38,11 @@
         							echo "<font color='red'><label id='msg'>Invalid username or password !</label></font>";//massage for invalid  user
         	
         						}?>
-          						<form method="get" action="<?php echo base_url('index.php/')?>welcome/userLogin" name='myform'>
+          						<form method="get" action="<?php echo base_url('index.php/welcome/userLogin')?>" name='myform'>
                     				<div class="form_row"><label>User Name</label><input name="uid" type="text" class="noSpecialChars" id="uid" maxlength="60"/>
               						</div>
                     				<div class="form_row"><label>Password</label><input name="upass" type="password" class="inputfield" id="password" maxlength="60"/></div>
-                    				<a href="<?php echo base_url('index.php/')?>welcome/register"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
+                    				<a href="<?php echo base_url('index.php/welcome/register')?>"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
                 				</form>
 					</div>
 			<?php }?>
@@ -92,20 +77,9 @@
             <div class="spacetobottom"></div>
             
             <div class="twocolumn">
-	            <div class="twocolumn_box">
-                    <h1>Who We Are</h1>
-                    <p>
-                        <img src="<?php base_url()?>images/image(70x70).jpg" alt="image" />
-                   Proin vel libero id erat venenatis accumsan. Nunc blandit orci sit amet risus.
-                  </p>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Praesent varius egestas velit</li>
-                        <li>Donec iaculis felis id neque</li>                        
-                </ul>
-                    <div class="more_button"><a href="#">View  All</a></div>
-                </div>
-                
+	            <?php include_once './application/views/WhoIAm.php';//Who i am Note page is included here
+        	
+        		?>
                 <div class="spacetoright"></div>
 
                 <div class="twocolumn_box">

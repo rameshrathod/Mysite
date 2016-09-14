@@ -30,8 +30,15 @@ Class MyModel extends CI_Model {
 		}	
 		
 		else{
+			
+			if($this->session->userdata("sessionStartTime")==null)
+			{
+				$this->session->set_userdata('sessionStartTime',time());
+			}
+			
 			return $data;
 		}
+
 		
 	
 	}
@@ -58,6 +65,14 @@ Class MyModel extends CI_Model {
 	
 	}
 	
+	public  function aboutUsDetailsfetch($tableName){
+	
+		$query = $this->db->get($tableName);
+		$aboutUsData = $query->result();
+		return $aboutUsData;
+	
+	}
+	
 	public function LoginAllContent(){
 	
 		$s_anchors['s_anchors']=$this->MyModel->fetchServiceAnchor('serviceanchors');
@@ -66,18 +81,15 @@ Class MyModel extends CI_Model {
 		
 		$welcomeNote['welcomeNote']=$this->MyModel->welcomeContent('welcomehomenote');
 		
+		$aboutUscontent['aboutUscontent']=$this->MyModel->aboutUsDetailsfetch("whoiam");
 		
 		
-		$arrayOfAllWelcomePageData=Array($s_anchors,$prod_anchors,$myprof_anchors,$welcomeNote);
+		
+		$arrayOfAllWelcomePageData=Array($s_anchors,$prod_anchors,$myprof_anchors,$welcomeNote,$aboutUscontent);
 	
 		return $arrayOfAllWelcomePageData;
 	}
 	
-
-
-
-	
-
 	
 }
 ?>

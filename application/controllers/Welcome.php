@@ -12,21 +12,22 @@ class Welcome extends CI_Controller {
 		//$this->load->driver('session');
 		$this->load->model('MyModel');
 		$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
-		$this->load->view('welcome_message',$welcomePageDisplayData);
-		
 
+			$this->load->view('welcome_message',$welcomePageDisplayData);
+		
 	}
 	
 	public function registration()//for registration
 	{
 		$this->load->model('MyModel');
 		$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
-		$this->load->view('Registration',$welcomePageDisplayData);
+
+			$this->load->view('Registration',$welcomePageDisplayData);	
 	}
 	public function logout(){//for logout
-		$this->session->unset_userdata('mob');
-		//$this->load->view('welcome_message',$arrayOfAnchors);
-		header("location:".base_url('index.php')."");
+		$this->session->unset_userdata('user');
+		$this->session->sess_destroy();
+		header("location:".base_url('index.php')."");	
 	}
 	
 	public function userLogin()//for login
@@ -35,21 +36,33 @@ class Welcome extends CI_Controller {
 			$pass=MD5($_REQUEST['upass']);
 		$this->load->model('MyModel');		
 		$datas['datas']=$this->MyModel->Select("user_details",$uname,$pass);
-			//var_dump($data);
+		
 		foreach ($datas as $data) {
-			$user= $data[0]->username;
-			
+			$user= $data[0]->username;	
 		}
-		echo $mob;
+		
 		$this->session->set_userdata('user',$user);
-		//echo $pjs[0]->player_name;
-		//header("location:".base_url('index.php')."?user");
 		$this->load->model('MyModel');
-		$welcomePageDisplayData['$welcomePageDisplayData']=$this->MyModel->LoginAllContent();	
-		$this->load->view('Login',$welcomePageDisplayData);
-			//$this->load->view('login',$data);
-    		  	
+		$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+			
+	if($this->session->userdata("sessionStartTime")!=null)//checking for session
+		{
+			
+			if ($this->session->userdata("sessionStartTime") + 10< time()) {//session time
+			
+				header("location:".base_url('index.php/welcome/logout')."");//if session time out then redirect to logout
+			}
+			
+			else {
+				$this->load->view('welcome_message',$welcomePageDisplayData);
+			}
+		}
+		else{
+			$this->load->view('welcome_message',$welcomePageDisplayData);
+		}
+	
  	 } 
+ 	 
  	 public function insertModel(){
  	 
  	 	if(strtoupper($_GET['cap'])==strtoupper($_REQUEST['val_cap']))
@@ -75,6 +88,7 @@ class Welcome extends CI_Controller {
  	 					'firstname'=>$_GET['fname'],
  	 					'lastname'=>$_GET['lname']
  	 			);
+ 	 			
  	 			$this->MyModel->Insert($data);
  	 			header("location:".base_url('index.php/')."welcome/register?registerSuccess");
  	 
@@ -89,6 +103,26 @@ class Welcome extends CI_Controller {
  	 	}
  	 
  	 
+ 	 }
+ 	 
+ 	 public function aboutus(){
+ 	 	
+ 	 	$this->load->model('MyModel');
+ 	 	$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+
+ 	 		$this->load->view('AboutUs',$welcomePageDisplayData);
+ 	 	
+
+ 	 }
+ 	 
+ 	 public function contactus(){
+ 	 
+ 	 	$this->load->model('MyModel');
+ 	 	$welcomePageDisplayData['welcomePageDisplayData']=$this->MyModel->LoginAllContent();
+ 	 		$this->load->view('ContactUs',$welcomePageDisplayData);
+ 	 	
+ 	 	
+ 	 		
  	 }
  	 	
 
