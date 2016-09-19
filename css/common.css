@@ -170,17 +170,18 @@ input{
 
 #logo{
 	    margin-left: 50px;
+	    
 }
 #templatemo_header {
 	float: left;
 	width: 310px;
 	height: 268px;	
-
-	    background-color: black;
+	background: url(../images/header.jpg) no-repeat;
+	 background-color: black;
 }
 
 #templatemo_sitetitle {
-    padding:0px 0 10px 40px;
+padding: 185px 0 10px 40px;
     font-size: 3.0em;
     font-weight: bold;
     color: #ff6000;
@@ -200,9 +201,8 @@ input{
 	float: left;
 	width: 590px;
 	height: 268px;
-	background: url(../images/banner1.jpg) no-repeat;
+	 background: url(../images/banner1.jpg) no-repeat;
 }
-
 #templatemo_bannertext{
 	text-align: right;
 	padding: 190px 20px 0 0;
