@@ -37,7 +37,7 @@
 			echo "<h1>Welcome to Registration page</h1>";
 			?>
 			</div>
-							<div class='reg_from_row'><input type ="text" id = "uname" placeholder = "user name" name = "uname" class="required noSpecialChars"></div>
+							<div class='reg_from_row'><input type ="text" id = "uname"  name = "uname" class="required noSpecialChars"></div>
 							
 							<?php if(isset($_REQUEST['userExist']))
 		{
