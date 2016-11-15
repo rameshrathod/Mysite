@@ -13,118 +13,44 @@
 <script src="<?php echo base_url()?>js/loginform-validation.js"></script>
 <script src="<?php echo base_url()?>js/form-validation1.js"></script>
 </head>
-
 <body>
 <div id="templatemo_wrapper1">
 <div id="templatemo_wrapper2">
 	<div id="templatemo_container">
     
-					<?php include_once './application/views/menuAnchors.php';?>
-        
-        
-            <div id="templatemo_header_banner">
-    	<div id="templatemo_header">
-        	<div id="templatemo_sitetitle">
-            	Dream<br/><br/><span> Projects</span>&<span>Solutions</span></div>
-      <div id="templatemo_tagline"><i>Building and Delivering project knowledge</i></div>
-        </div>
-        <div id="templatemo_banner">
-        	
-        	<div id="templatemo_bannertext">
-        		<div id='back'>
-            	Let's build<br /><span>SUCCESSFUL PROJECTS</span><br/>
-            	together
-            	</div>
-            </div>
-        </div>
-    </div>
+					<?php include_once './application/views/menuAnchors.php';
+					
+						  include_once './application/views/banner.php';
+					
+					?>
      <div id="templatemo_content">
  
    		<!-- left column -->
    	
     	<div id="templatemo_leftcolumn">
-    		<?php if(!$this->session->userdata('mob'))
-        		{?>
-        			<div class="login_form">
-             				<h1>Client Login</h1>
-        						<?php if(isset($_REQUEST['sts'])){
-        	
-        	
-        							echo "<font color='red'><label id='msg'>Invalid username or password !</label></font>";//massage for invalid  user
-        	
-        						}?>
-          						<form method="get" action="<?php echo base_url('index.php/')?>welcome/userLogin" name='myform'>
-                    				<div class="form_row"><label>User Name</label><input name="uid" type="text" class="noSpecialChars" id="uid" maxlength="60"/>
-              						</div>
-                    				<div class="form_row"><label>Password</label><input name="upass" type="password" class="inputfield" id="password" maxlength="60"/></div>
-                    				<a href="<?php echo base_url('index.php/')?>welcome/register"><label id='register'>click here for register</label></a><input class="button" type="submit" name="Submit" value="Login" />
-                				</form>
-					</div>
-			<?php }?>
-			
-            
-		            <div class="spacetobottom"></div>
-		            	<h1>Latest News</h1>
-		            		<div class="newssection">    
-			            		<h4>Mauris blandit vehicula neque</h4>        	
-		                		<p>Quisque in diam a justo condimentum molestie. Vivamus a velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. <a href="#">more...</a></p>
-		            		</div>
-		            
-							<div class="newssection">    
-			            		<h4>Curabitur velit tellus</h4>        	
-		                		<p>Duis vitae velit sed dui males uada digni ssim. Donec mollis aliquet ligula. Maec enas adipiscing elementum ipsum. <a href="#">more...</a></p>
-		            		</div>
-		            <div class="more_button"><a href="#">Read All</a></div>
-		            
-		            		<a href="http://validator.w3.org/check?uri=referer"><img style="border:0;width:88px;height:31px" src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" width="88" height="31" vspace="8" border="0" /></a>
-							<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px"  src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" vspace="8" border="0" /></a>
-            
+    		<?php if(!$this->session->userdata('user'))
+        		{
+        			include_once './application/views/LoginForm.php';
+        		}
+        		include_once './application/views/LatestNews.php';
+        		?>            
         </div>
         <!-- End of left column -->
 
         <!-- Right column -->
         <div id="templatemo_rightcolumn">
-        	<div class="onecolumn">
-                <h1>Welcome to our website</h1>
-                <p> <img src="<?php base_url()?>images/image(130x130).jpg" alt="image" />
-                City Night Template is provided by <a href="http://www.templatemo.com" target="_parent">templatemo.com</a> for free of charge. You may modify and apply this layout for your websites.</p>
-              <p>Credit goes to <a href="http://www.pdphoto.org" target="_blank">PDPhoto.org</a> for header image.</p>
-              <p>
-                Lorem ipsum nunc quis sem dolor sit amet, consectetuer adipiscing elit. Duis mollis aliquet ligula. Maecenas adipiscing elementum vitae velit sed dui malesuada dignissim.</p>
-		  </div>
+        	
+        	<?php include_once './application/views/welcomeNotePage.php';//welcome Note page is included here
+        	
+        		?>
 					            
             <div class="spacetobottom"></div>
             
             <div class="twocolumn">
-	            <div class="twocolumn_box">
-                    <h1>Who We Are</h1>
-                    <p>
-                        <img src="<?php base_url()?>images/image(70x70).jpg" alt="image" />
-                   Proin vel libero id erat venenatis accumsan. Nunc blandit orci sit amet risus.
-                  </p>
-                    <ul>
-                        <li>Lorem ipsum dolor sit amet</li>
-                        <li>Praesent varius egestas velit</li>
-                        <li>Donec iaculis felis id neque</li>                        
-                </ul>
-                    <div class="more_button"><a href="#">View  All</a></div>
-                </div>
+	            <?php include_once './application/views/WhoIAm.php';//Who i am Note page is included here
+        		include_once './application/views/WhatWeDo.php';
+        		?>
                 
-                <div class="spacetoright"></div>
-
-                <div class="twocolumn_box">
-                    <h1>What We Do</h1>
-                    <p>
-                        <img src="<?php base_url()?>images/image(70x70).jpg" alt="image" />
-                    Aliquam tristique lacus in sapien. Suspendisse potenti. Ut sed pede. Nullam vitae tellus. 
-                    </p>
-                    <ul>
-                    	<li>Praesent varius egestas velit</li>
-                        <li>Donec iaculis felis id neque</li>
-                        <li>Lorem ipsum dolor sit amet</li>
-					</ul>
-                    <div class="more_button"><a href="#">View  All</a></div>
-                </div>
 			</div>
             
            	<div class="spacetobottom"></div> 
