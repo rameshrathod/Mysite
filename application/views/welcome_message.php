@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>City Night Layout - free website template</title>
+<title>dream Projects</title>
 <meta name="keywords" content="city night layout, free template, CSS, HTML" />
 <meta name="description" content="City Night layout is a free website template provided by templatemo.com" />
 <link href="<?php echo base_url()?>css/common.css" rel="stylesheet" type="text/css" />

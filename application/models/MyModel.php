@@ -60,6 +60,13 @@ class MyModel extends CI_Model {
 		$whatWeDoData = $query->result ();
 		return $whatWeDoData;
 	}
+	
+	
+	public function bannerDataFetch($tableName) {
+		$query = $this->db->get ( $tableName );
+		$bannerData = $query->result ();
+		return $bannerData;
+	}
 	public function LoginAllContent() {
 		$s_anchors ['s_anchors'] = $this->MyModel->fetchServiceAnchor ( 'serviceanchors' );
 		$prod_anchors ['prod_anchors'] = $this->MyModel->fetchServiceAnchor ( 'productanchors' );
@@ -69,6 +76,7 @@ class MyModel extends CI_Model {
 		$aboutUscontent ['aboutUscontent'] = $this->MyModel->aboutUsDetailsfetch ( "whoweare" );
 		$latestNewsContent ['latestNewsContent'] = $this->MyModel->latestNewsDetailsfetch ( "latestnews" );
 		$whatWeDoContent ['whatWeDoContent'] = $this->MyModel->whatWeDoDetailsfetch ( "whatwedo" );
+		$bannerContent ['bannerContent'] = $this->MyModel->bannerDataFetch ( "mainbanner" );
 		
 		$arrayOfAllWelcomePageData = Array (
 				$s_anchors,
@@ -77,7 +85,8 @@ class MyModel extends CI_Model {
 				$welcomeNote,
 				$aboutUscontent,
 				$latestNewsContent,
-				$whatWeDoContent
+				$whatWeDoContent,
+				$bannerContent
 		);
 		
 		return $arrayOfAllWelcomePageData;
